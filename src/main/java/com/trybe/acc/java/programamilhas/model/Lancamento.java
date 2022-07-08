@@ -13,6 +13,26 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Lancamento {
 
+  /**
+   * Construtor.
+   */
+  public Lancamento() {
+    super();
+  }
+
+  public Lancamento(Pessoa usuario, TipoLancamento tipoLancamento,
+      Parceiro parceiro, Produto produto, Integer valor, String descricao,
+      LocalDate data) {
+    super();
+    this.usuario = usuario;
+    this.tipoLancamento = tipoLancamento;
+    this.parceiro = parceiro;
+    this.produto = produto;
+    this.valor = valor;
+    this.descricao = descricao;
+    this.data = data;
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "idLancamento")
