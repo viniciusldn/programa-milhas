@@ -12,13 +12,25 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Admin.
+ */
 @Path("/admin")
 @ApplicationScoped
 public class Admin {
 
+  /** The service. */
   @Inject
   AdminService service;
 
+  /**
+   * Mostrar saldos.
+   *
+   * @param token the token
+   * @return the list
+   * @throws AcessoNaoAutorizadoException the acesso nao autorizado exception
+   */
   @POST
   @Path("/saldos")
   @Produces(MediaType.APPLICATION_JSON)

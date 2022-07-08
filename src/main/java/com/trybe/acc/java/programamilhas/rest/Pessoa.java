@@ -16,15 +16,25 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Pessoa.
+ */
 @Path("/pessoa")
 @ApplicationScoped
 public class Pessoa {
 
+  /** The service. */
   @Inject
   PessoaService service;
 
   /**
    * Metodo.
+   *
+   * @param loginDto the login dto
+   * @return the response
+   * @throws InvalidKeySpecException the invalid key spec exception
+   * @throws NoSuchAlgorithmException the no such algorithm exception
    */
   @POST
   @Produces(MediaType.APPLICATION_JSON)
@@ -37,6 +47,13 @@ public class Pessoa {
     return Response.ok().build();
   }
 
+  /**
+   * Deletar.
+   *
+   * @param token the token
+   * @return the response
+   * @throws AcessoNaoAutorizadoException the acesso nao autorizado exception
+   */
   @DELETE
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)
