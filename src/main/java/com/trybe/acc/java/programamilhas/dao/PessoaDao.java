@@ -7,8 +7,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PessoaDao.
+ */
 @ApplicationScoped
 public class PessoaDao {
+
+  /** The entity manager. */
   @Inject
   EntityManager entityManager;
 
@@ -17,6 +23,10 @@ public class PessoaDao {
    * <p>
    * Não delete este método!
    * </p>
+   *
+   * @param login the login
+   * @param hash  the hash
+   * @return the pessoa
    */
   public Pessoa autenticar(String login, String hash) {
     String hql = "from " + Pessoa.class.getSimpleName()
@@ -29,6 +39,10 @@ public class PessoaDao {
 
   /**
    * Metodo.
+   *
+   * @param login the login
+   * @param hash  the hash
+   * @return the pessoa
    */
   @Transactional
   public Pessoa criar(String login, String hash) {
@@ -42,6 +56,9 @@ public class PessoaDao {
 
   /**
    * Metodo.
+   *
+   * @param id the id
+   * @return the pessoa
    */
   public Pessoa pessoaPorId(int id) {
     String hql = "from Pessoa where id = :id";
@@ -52,6 +69,8 @@ public class PessoaDao {
 
   /**
    * Metodo.
+   *
+   * @param id the id
    */
   @Transactional
   public void deletar(int id) {

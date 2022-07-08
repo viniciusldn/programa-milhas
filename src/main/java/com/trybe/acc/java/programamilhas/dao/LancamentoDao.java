@@ -13,14 +13,21 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LancamentoDao.
+ */
 @ApplicationScoped
 public class LancamentoDao {
 
+  /** The entity manager. */
   @Inject
   EntityManager entityManager;
 
   /**
    * Metodo.
+   *
+   * @param lancamento the lancamento
    */
   @Transactional
   public void deletar(Lancamento lancamento) {
@@ -30,6 +37,14 @@ public class LancamentoDao {
 
   /**
    * Metodo.
+   *
+   * @param usuario the usuario
+   * @param tipoLancamento the tipo lancamento
+   * @param parceiro the parceiro
+   * @param produto the produto
+   * @param valor the valor
+   * @param descricao the descricao
+   * @param data the data
    */
   @Transactional
   public void criar(Pessoa usuario, TipoLancamento tipoLancamento, Parceiro parceiro,
@@ -47,6 +62,9 @@ public class LancamentoDao {
 
   /**
    * Metodo.
+   *
+   * @param id the id
+   * @return the list
    */
   public List<Lancamento> lacamentosPorId(int id) {
     String hql = "from Lancamento where idpessoa = :id";
@@ -57,6 +75,8 @@ public class LancamentoDao {
 
   /**
    * Metodo.
+   *
+   * @return the list
    */
   public List<Lancamento> mostrarSaldos() {
     String hql = "from Lancamento";

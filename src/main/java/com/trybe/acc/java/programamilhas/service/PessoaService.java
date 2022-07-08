@@ -19,23 +19,36 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.NoResultException;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PessoaService.
+ */
 @ApplicationScoped
 public class PessoaService {
 
+  /** The pessoa dao. */
   @Inject
   PessoaDao pessoaDao;
 
+  /** The hash util. */
   @Inject
   HashUtil hashUtil;
 
+  /** The token util. */
   @Inject
   TokenUtil tokenUtil;
 
+  /** The lancamento dao. */
   @Inject
   LancamentoDao lancamentoDao;
 
   /**
    * Metodo.
+   *
+   * @param loginDto the login dto
+   * @return true, if successful
+   * @throws InvalidKeySpecException the invalid key spec exception
+   * @throws NoSuchAlgorithmException the no such algorithm exception
    */
   public boolean criar(LoginDto loginDto)
       throws InvalidKeySpecException, NoSuchAlgorithmException {
@@ -60,6 +73,9 @@ public class PessoaService {
 
   /**
    * Metodo.
+   *
+   * @param token the token
+   * @throws AcessoNaoAutorizadoException the acesso nao autorizado exception
    */
   public void deletar(String token) throws AcessoNaoAutorizadoException {
     int id = tokenUtil.obterIdUsuario(token);

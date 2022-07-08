@@ -9,14 +9,21 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DominioDao.
+ */
 @ApplicationScoped
 public class DominioDao {
 
+  /** The entity manager. */
   @Inject
   EntityManager entityManager;
 
   /**
    * Metodo.
+   *
+   * @return the list
    */
   public List<TipoLancamento> tiposDeLancamentos() {
     String hql = "FROM TipoLancamento";
@@ -26,6 +33,8 @@ public class DominioDao {
 
   /**
    * Metodo.
+   *
+   * @return the list
    */
   public List<Parceiro> parceiro() {
     String hql = "FROM Parceiro";
@@ -35,6 +44,8 @@ public class DominioDao {
 
   /**
    * Metodo.
+   *
+   * @return the list
    */
   public List<Produto> produto() {
     String hql = "FROM Produto";

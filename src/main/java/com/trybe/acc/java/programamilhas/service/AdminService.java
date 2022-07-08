@@ -9,14 +9,23 @@ import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AdminService.
+ */
 @ApplicationScoped
 public class AdminService {
 
+  /** The dao. */
   @Inject
   LancamentoDao dao;
 
   /**
    * Metodo.
+   *
+   * @param token the token
+   * @return the list
+   * @throws AcessoNaoAutorizadoException the acesso nao autorizado exception
    */
   public List<SaldoResult> mostrarSaldos(String token)
       throws AcessoNaoAutorizadoException {
